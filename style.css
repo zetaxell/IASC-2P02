@@ -1,0 +1,29 @@
+body {
+    background-color: aquamarine;
+    color:darkmagenta;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: left;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+li {
+    font-size: 24px;
+    list-style-type: none;
+}
+
+a {
+    color:crimson;
+}
+
+a:hover {
+    color:coral;
+    text-decoration: overline;
+}
