@@ -79,6 +79,15 @@ torusKnot.position.set(6, 1.5, 0)
 torusKnot.castShadow = true
 scene.add(torusKnot)
 
+//sun
+const sunGeometry = new THREE.SphereGeometry()
+const sunMaterial = new THREE.MeshLambertMaterial({
+    emissive: new THREE.Color('orange'),
+    emissiveIntensity: 20
+})
+const sun = new THREE.Mesh(sunGeometry, sunMaterial)
+scene.add(sun)
+
 /* LIGHTS */
 
 /*
@@ -146,16 +155,17 @@ const clock = new THREE.Clock()
 const animation = () => {
 
     //return elapsedTime
-    const elapsedTime = clock.getElapsedTime
+    const elapsedTime = clock.getElapsedTime()
 
     //animate objects
-    //torusKnot.rotation.y = elapsedTime
-    //torusKnot.position.z = Math.sin(elapsedTime * 0.5) * 2
+    torusKnot.rotation.y = elapsedTime
+    torusKnot.position.z = Math.sin(elapsedTime * 0.5) * 2
 
     //update directional light helper
     //directionalLightHelper.update()
 
-    console.log(camera.position)
+    //sun position to directional light
+    sun.position.copy(directionalLight.position)
 
     //controls
     controls.update()
