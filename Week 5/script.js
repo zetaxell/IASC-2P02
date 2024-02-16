@@ -149,8 +149,8 @@ const animation = () => {
     const elapsedTime = clock.getElapsedTime
 
     //animate objects
-    //torusKnot.rotation.y = elapsedTime
-    //torusKnot.position.z = Math.sin(elapsedTime * 0.5) * 2
+    torusKnot.rotation.y = elapsedTime
+    torusKnot.position.z = Math.sin(elapsedTime * 0.5) * 2
 
     //update directional light helper
     //directionalLightHelper.update()
