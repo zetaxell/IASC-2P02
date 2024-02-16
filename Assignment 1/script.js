@@ -71,11 +71,22 @@ scene.add(caveFLoor)
 
 //objects
 
+//cylinder
+const cylinderGeometry = new THREE.CylinderGeometry(1.25, 1.25, 3, 32, 1, true)
+const cylinderMaterial = new THREE.MeshNormalMaterial({
+    side: THREE.DoubleSide
+})
+const cylinder = new THREE.Mesh(cylinderGeometry, cylinderMaterial)
+cylinder.position.set(8, 1.5, 0)
+cylinder.rotation.z = Math.PI * 0.5
+cylinder.castShadow = true
+scene.add(cylinder)
+
 //torusKnot
-const torusKnotGeometry = new THREE.TorusKnotGeometry(1, 0.2)
+const torusKnotGeometry = new THREE.TorusKnotGeometry(0.5, 0.1)
 const torusKnotMaterial = new THREE.MeshNormalMaterial()
 const torusKnot = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
-torusKnot.position.set(6, 1.5, 0)
+torusKnot.position.set(12, 1.7, 0)
 torusKnot.castShadow = true
 scene.add(torusKnot)
 
@@ -104,7 +115,7 @@ const directionalLight = new THREE.DirectionalLight(
     0.5
 )
 directionalLight.target = caveWall
-directionalLight.position.set(8.6, 1.7, 0)
+directionalLight.position.set(15, 1.5, 0)
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.width = 1024
 directionalLight.shadow.mapSize.height = 1024
@@ -162,7 +173,7 @@ lightPositionFolder
 
 //dom object
 const domObject = {
-    part: 1,
+    part: 0,
     firstChange: false,
     secondChange: false,
     thirdChange: false,
@@ -253,6 +264,7 @@ const animation = () => {
         torusKnot.rotation.y = elapsedTime
         torusKnot.rotation.x = elapsedTime
         torusKnot.rotation.z = elapsedTime
+        cylinder.rotation.y = elapsedTime * 0.5
     }
 
     //second-change
@@ -270,7 +282,7 @@ const animation = () => {
         directionalLight.position.y -= elapsedTime * 0.005
     }
 
-    console.log(camera.position)
+    //console.log(camera.position)
 
     //renderer
     renderer.render(scene, camera)
