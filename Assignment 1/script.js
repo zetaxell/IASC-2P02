@@ -88,7 +88,23 @@ const torusKnotMaterial = new THREE.MeshNormalMaterial()
 const torusKnot = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
 torusKnot.position.set(12, 1.7, 0)
 torusKnot.castShadow = true
-scene.add(torusKnot)
+//scene.add(torusKnot)
+
+//sphere
+const sphereGeometry = new THREE.SphereGeometry(0.5)
+const sphereMaterial = new THREE.MeshNormalMaterial()
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
+sphere.position.set(12, 1.7, 0)
+sphere.castShadow = true
+scene.add(sphere)
+
+//lid
+const lidGeometry = new THREE.SphereGeometry(1.2)
+const lidMaterial = new THREE.MeshNormalMaterial()
+const lid = new THREE.Mesh(lidGeometry, lidMaterial)
+lid.position.set(6, 5, 0)
+lid.castShadow = true
+scene.add(lid)
 
 //sun
 const sunGeometry = new THREE.SphereGeometry()
@@ -177,7 +193,6 @@ const domObject = {
     firstChange: false,
     secondChange: false,
     thirdChange: false,
-    fourthChange: false
 }
 
 //continue-reading
@@ -197,10 +212,13 @@ document.querySelector('#restart').onclick = function(){
     domObject.firstChange = false
     domObject.secondChange = false
     domObject.thirdChange = false
-    domObject.fourthChange = false
 
     //reset sun
-    directionalLight.position.set(8.6, 1.7, 0)
+    directionalLight.position.set(15, 1.5, 0)
+
+    sphere.position.set(12, 1.7, 0)
+    lid.position.set(6, 5, 0)
+    cylinder.position.set(8, 1.5, 0)
 }
 
 //first change
@@ -218,10 +236,7 @@ document.querySelector('#third-change').onclick = function(){
     domObject.thirdChange = true
 }
 
-//fourth change
-document.querySelector('#fourth-change').onclick = function(){
-    domObject.fourthChange = true
-}
+
 
 /* ANIMATION LOOP */
 const clock = new THREE.Clock()
@@ -261,26 +276,27 @@ const animation = () => {
 
     //first-change
     if(domObject.firstChange){
-        torusKnot.rotation.y = elapsedTime
-        torusKnot.rotation.x = elapsedTime
-        torusKnot.rotation.z = elapsedTime
-        cylinder.rotation.y = elapsedTime * 0.5
+        sphere.position.z = Math.sin(elapsedTime) * 0.5
     }
 
     //second-change
     if(domObject.secondChange){
-        torusKnot.position.y = Math.sin(elapsedTime * 0.5) * 6
+        if(lid.position.y > 1.5){
+            lid.position.y -= elapsedTime * 0.05
+            if(lid.position.y <= 1.5){
+                lid.position.y = 1.4
+            }
+        }
+        
     }
 
     //third-change
     if(domObject.thirdChange){
-        torusKnot.position.y = 2
+        sphere.position.z = 0
+        lid.position.y -= elapsedTime * 0.09
+        cylinder.position.y -= elapsedTime * 0.09
     }
 
-    //fourth-change
-    if(domObject.fourthChange){
-        directionalLight.position.y -= elapsedTime * 0.005
-    }
 
     //console.log(camera.position)
 
