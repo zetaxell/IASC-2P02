@@ -189,7 +189,7 @@ lightPositionFolder
 
 //dom object
 const domObject = {
-    part: 0,
+    part: 1,
     firstChange: false,
     secondChange: false,
     thirdChange: false,
