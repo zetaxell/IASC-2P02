@@ -72,21 +72,21 @@ const domObject = {
 }
 
 //part 1 click
-document.querySelector('#click1').onCLick = function(){
+document.querySelector('#click1').onclick = function(){
     document.querySelector('#first').classList.add('hidden')
     document.querySelector('#second').classList.remove('hidden')
     domObject.part = 2
 }
 
 //part 2 click
-document.querySelector('#click2').onCLick = function(){
+document.querySelector('#click2').onclick = function(){
     document.querySelector('#second').classList.add('hidden')
     document.querySelector('#third').classList.remove('hidden')
     domObject.part = 3
 }
 
 //part 3 click
-document.querySelector('#click3').onCLick = function(){
+document.querySelector('#click3').onclick = function(){
     document.querySelector('#third').classList.add('hidden')
     document.querySelector('#first').classList.remove('hidden')
     domObject.part = 1
