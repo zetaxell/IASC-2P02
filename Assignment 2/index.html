@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Data Visualization Assignment</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+
+    <!-- datavis 1 -->
+    <script src="script.js" type="module"></script>
+
+    <!-- datavis 2-->
+    <script src="script2.js" type="module"></script>
+</head>
+<body>
+    <h1>Carmilla</h1>
+    <h2>Iain Gordon</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat arcu id neque viverra, non eleifend urna imperdiet. Fusce bibendum tortor felis, sodales tristique sem facilisis ut. Aenean euismod metus a luctus consectetur. Aenean diam lacus, consequat nec nisl a, lacinia condimentum diam. Aliquam volutpat quam ut metus accumsan lobortis. Nam dictum cursus dui imperdiet imperdiet. Curabitur commodo sodales euismod. Duis varius, risus vel varius blandit, lorem risus efficitur diam, vitae euismod felis arcu eu sem. Cras vehicula tortor vitae enim tincidunt sodales. Nunc viverra ligula ante. Morbi malesuada aliquam nisl et ultrices. Mauris ante odio, aliquet id erat ac, laoreet tincidunt urna. Nam ut libero in elit commodo laoreet. Suspendisse potenti.</p>
+
+    <p>Mauris placerat congue sem. Aenean hendrerit mi metus, eu sagittis ante fringilla eget. Nunc efficitur velit ut nisi imperdiet, in posuere tellus lobortis. Nam nisi nunc, pellentesque nec neque non, tempus mollis mauris. Cras in ligula posuere, tincidunt turpis aliquet, dignissim nunc. Suspendisse at ligula pellentesque, eleifend tortor in, vestibulum nisl. Quisque ante erat, facilisis id est et, tempus aliquam nisi. Donec placerat molestie turpis, quis interdum lacus molestie in. Sed elementum finibus erat, ac elementum augue. Vivamus gravida ac ligula eget vehicula. Aenean diam nunc, scelerisque sed sollicitudin eu, fringilla vitae elit. Ut vel accumsan lacus, sit amet tristique velit. Integer fermentum scelerisque risus eu bibendum. Phasellus et consectetur urna.</p>
+
+    <!--datavis 1--> 
+    
+    <div class="canvas-container">
+        <h2>Names in Carmilla</h2>
+        <!--
+        <ul>
+            <li id="red">Carmilla</li>
+            <li id="green">Laura</li>
+            <li id="blue">Perrodon</li>
+        </ul>
+    -->
+        <canvas class="webgl"></canvas>
+        <div id="parent1"></div>
+        <p>Left click and drag to rotate. Right click and drag to rotate. Scroll to zoom.</p>
+    </div>
+
+    <p>Maecenas vitae lorem non turpis pulvinar mollis. Quisque aliquet sit amet lacus eget iaculis. Aliquam dapibus eros vulputate massa venenatis, et semper ex condimentum. Proin at cursus ipsum. Nam convallis urna vitae mauris finibus, et pharetra massa tempus. Vestibulum eget sapien nunc. Aenean sed dignissim dui, ut tempus massa. Nam et ultricies felis, vitae commodo orci. Ut sem augue, elementum ut orci sit amet, tincidunt porttitor neque. Ut et quam sit amet nisi facilisis laoreet.</p>
+
+    <p>Duis sagittis lacinia nisi, varius fringilla nulla mattis sed. Mauris sodales quam lectus, non faucibus est ornare rutrum. Vestibulum ornare orci sed risus eleifend tristique. Vestibulum iaculis dui sed ipsum scelerisque mollis. Sed eget hendrerit nulla. Cras sit amet quam in felis egestas porttitor ac quis erat. Integer sagittis aliquet dui, et semper libero iaculis ac. Ut mi ex, porta ut vestibulum a, elementum vel lectus. Praesent ut placerat magna. Nam ullamcorper nibh convallis metus venenatis lacinia. Duis congue laoreet nibh at molestie. Nam quis leo ac sapien rhoncus porta ac et felis. Curabitur feugiat in ipsum a mattis. Vivamus elit turpis, cursus non egestas quis, viverra eget purus. Fusce commodo, sem sit amet ultrices euismod, quam risus pharetra urna, fringilla dignissim ex mi non massa.</p>
+
+    <!--datavis 2-->
+    <div class="canvas-container">
+        <h2>2nd thing</h2>
+        <canvas class="webgl2"></canvas>
+        <div id="parent2"></div>
+        <p>Left click and drag to rotate. Right click and drag to rotate. Scroll to zoom.</p>
+    </div>
+
+    <p>Mauris euismod libero vel congue consectetur. Nam feugiat augue non orci venenatis elementum. Aliquam commodo mauris id velit iaculis tempor. Cras mi mauris, ultrices eget ultrices ac, tincidunt quis metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ornare massa mauris, nec faucibus mauris tincidunt a. Donec sit amet nunc arcu. Nunc sed velit quis erat tincidunt congue in vel orci. Morbi orci enim, rutrum id euismod a, porttitor eget turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce maximus egestas fermentum.</p>
+
+    
+    
+</body>
