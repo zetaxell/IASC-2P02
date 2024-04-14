@@ -46,7 +46,7 @@ scene.add(directionalLight)
 
 /* MESHES */
 //cube geometry
-const cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5)
+const cubeGeometry = new THREE.BoxGeometry(0.7, 0.7, 0.7)
 
 //cube materials
 const redMaterial = new THREE.MeshStandardMaterial({
@@ -80,9 +80,9 @@ let preset = {}
 const uiobj = {
     text: '',
     textArray: [],
-    term1: 'broom',
-    term2: 'wand',
-    term3: 'hat',
+    term1: 'carmilla',
+    term2: 'mircalla',
+    term3: 'laura',
     rotateCamera: false
 }
 
@@ -125,7 +125,7 @@ const findTermInParsedText = (term, material) =>{
 }
 
 //load source text
-fetch("https://raw.githubusercontent.com/amephraim/nlp/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt")
+fetch("https://raw.githubusercontent.com/zetaxell/IASC-2P02/main/Assignment%202/Carmilla.txt")
     .then(response => response.text())
     .then((data) =>
     {
